@@ -199,7 +199,7 @@
 				var people = this.people;
 				$.getJSON('/getDirectoryInfo', 
 			     {
-			        parentDir: 'scans/'
+			        parentDir: 'scans_old/'
 			     }, 
 			     function( dirData ) {
 			    	window.modelInfo = dirData["directories"];
@@ -321,6 +321,8 @@
 				var distance = - (camera.position.z / dir.z)/1.25;
 
 				var lookVector = camera.position.clone().add( dir.multiplyScalar( distance ) );
+
+				lookVector.y-=1000;
 
 				if (showConfig) {
 					lookMesh.position.copy(lookVector);
