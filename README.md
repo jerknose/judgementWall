@@ -1,5 +1,3 @@
-#Judgement Wall
-
 ![Image of Judgement Wall](https://github.com/jerknose/judgementWall/blob/master/public/judgement1.gif?raw=true)
 
 This project is a commentary on the surreal nature of full-color 3d scanning techniques and how creepy they looked. Patrons would come into the gallery, get scanned, and their scan would appear on the wall. When patrons walked in front of the wall, the scanned busts would turn to look at them.
