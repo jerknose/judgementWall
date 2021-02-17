@@ -76,7 +76,7 @@
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 			var showConfig = false;
-			var useMouse = false;
+			var useMouse = true;
 
 			var container, stats;
 			var camera, cameraTarget, scene, renderer;
@@ -301,19 +301,19 @@
 			function getLookVector() {			
 				// var motionVector;
 
-				// if (useMouse) {
-				// 	motionVector = mouseVector;
-				// }
-				// else {
-				if(bUseVideo){
-					var	motionFromVideo = new THREE.Vector3(
-							(motionDetector.averageX.getValue() / 256 ) * 2 - 1,
-							-(motionDetector.averageY.getValue() / 80 ) * 2 + 2,
-							-0.5 );
-					// }
-					motionVector.copy(motionFromVideo);
+				if (useMouse) {
+					motionVector = mouseVector;
 				}
-
+				else {
+					if(bUseVideo){
+						var	motionFromVideo = new THREE.Vector3(
+								(motionDetector.averageX.getValue() / 256 ) * 2 - 1,
+								-(motionDetector.averageY.getValue() / 80 ) * 2 + 2,
+								-0.5 );
+					
+						motionVector.copy(motionFromVideo);
+					}
+				}
 				var vector = motionVector.clone();
 				vector.unproject( camera );
 
@@ -322,7 +322,7 @@
 
 				var lookVector = camera.position.clone().add( dir.multiplyScalar( distance ) );
 
-				lookVector.y-=1000;
+				// lookVector.y-=1000;
 
 				if (showConfig) {
 					lookMesh.position.copy(lookVector);
