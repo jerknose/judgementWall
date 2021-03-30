@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js webgl - STL</title>
+		<title>Judgement Wall - 2015 - by Travis</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
@@ -10,11 +10,14 @@
 				background-color: #FFFFFF;
 				margin: 0px;
 				overflow: hidden;
+				position: absolute;
+				width: 100%;
+				height: 100%;
 			}
 
 			#container {
-				width: 1920px;/*1280px;*/
-				height: 1080px;/*720px;*/
+				width: 100%;
+				height: 100%;
 				position: relative;
 				background: #000000;
 			}
@@ -41,11 +44,11 @@
 				text-align: center;
 			}
 		</style>
-	</head>
-	<body>
 
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.7.2/themes/smoothness/jquery-ui.css">
 		<script type="text/javascript" src="js/jquery.js"></script>
-		<!--<script type="text/javascript" src="js/tween.min.js"></script>-->
+		<script src="//code.jquery.com/ui/1.7.2/jquery-ui.js"></script>
+
 		<script type="text/javascript" src="js/Tween.js"></script>
 
 		<script type="text/javascript" src="js/three.min.js"></script>
@@ -53,16 +56,15 @@
 		<script src="js/oscControl.js"></script>
 		
 		<script type="text/javascript" src="js/loaders/DDSLoader.js"></script>
-        <script type="text/javascript" src="js/loaders/MTLLoader.js"></script>
-        <script type="text/javascript" src="js/loaders/OBJMTLLoader.js"></script>
-        <script type="text/javascript" src="js/loaders/STLLoader.js"></script>
-        <script type="text/javascript" src="js/modelLoader.js"></script>
+		<script type="text/javascript" src="js/loaders/MTLLoader.js"></script>
+		<script type="text/javascript" src="js/loaders/OBJMTLLoader.js"></script>
+		<script type="text/javascript" src="js/loaders/STLLoader.js"></script>
+		<script type="text/javascript" src="js/modelLoader.js"></script>
 
-        <script type="text/javascript" src="js/glfx-neu.js"></script>
-        <script type="text/javascript" src="js/moving-averager.js"></script>
-        <script type="text/javascript" src="js/simple-motion-detector.js"></script>
+		<script type="text/javascript" src="js/glfx-neu.js"></script>
+		<script type="text/javascript" src="js/moving-averager.js"></script>
+		<script type="text/javascript" src="js/simple-motion-detector.js"></script>
 
-		
 		<script type="text/javascript" src="js/controls/OrbitControls.js"></script>		
 		<script type="text/javascript" src="js/Detector.js"></script>
 		<script type="text/javascript" src="js/libs/stats.min.js"></script>
@@ -70,6 +72,39 @@
 
 		<script type="text/javascript" src="js/person.js"></script>
 		<script type="text/javascript" src="js/people.js"></script>
+
+
+	</head>
+	<script>
+		function initDialog()
+		{
+			$('#testDialog').dialog({
+				autoOpen    : true,
+				width       : '50%',
+			});
+		}   
+		
+		//Show the hidden dialog.
+		function showDialog()
+		{
+				$('#testDialog').css('visibility', 'visible');
+				$('#testDialog').dialog('open');
+		
+		} 
+
+		window.onload = function() {
+				initDialog();
+		}
+	</script>
+	<body>
+
+		<div id="testDialog">
+			<h4>Judgement Wall - 2015</h4>
+			<h5>by Travis Bennett (<a href="https://www.travisbennett.com/" target="_blank">travisbennett.com</a>)</h5>
+			<p>Disclaimer: Designed to run locally, hooked to a Kinect v1, projected on a wall. It is provided as is, for posterity.</p>
+			<p>Be patient. This project loads several large files. Things may be slow and / or buggy.</p>
+			<p><a href="https://www.travisbennett.com/all/judgement-wall" target="_blank">More Info</a></p>
+		</div>
 
 		<script>
 			//init
