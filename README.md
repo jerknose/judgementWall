@@ -19,7 +19,7 @@ Scanning done with Occipital Structure Sensor. People tracking using Microsoft K
 
 ------------
 
-[Demo](https://reckless.technology/archive/judgement-wall/) • [Code](https://github.com/jerknose/judgementWall)
+[Demo](https://reckless.technology/archive/judgement-wall/) • [More Info](https://www.travisbennett.com/all/judgement-wall)
 
 ------------
 
